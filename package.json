@@ -1,0 +1,23 @@
+{
+  "name": "ui-sandbox-modules",
+  "version": "0.0.0",
+  "description": "Ui-sandbox modules",
+  "scripts": {
+    "build": "rm -rf dist && NODE_OPTIONS=--max_old_space_size=4096 webpack -c webpack.config.js",
+    "package-name": "echo $npm_package_name"
+  },
+  "dependencies": {
+    "@gravity-ui/date-utils.2.3.0": "npm:@gravity-ui/date-utils@^2.3.0",
+    "@gravity-ui/date-utils.2.5.3": "npm:@gravity-ui/date-utils@^2.5.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "node": "20",
+    "npm": ">=8"
+  },
+  "files": [
+    "dist"
+  ]
+}
