@@ -1,10 +1,10 @@
 {
-  "name": "ui-sandbox-modules",
-  "version": "0.0.0",
+  "name": "@datalens-tech/ui-sandbox-modules",
+  "version": "0.0.1",
   "description": "Ui-sandbox modules",
+  "author": "DataLens Team <https://github.com/datalens-tech>",
   "scripts": {
     "build": "rm -rf dist && NODE_OPTIONS=--max_old_space_size=4096 webpack -c webpack.config.js",
-    "package-name": "echo $npm_package_name"
   },
   "dependencies": {
     "@gravity-ui/date-utils.2.3.0": "npm:@gravity-ui/date-utils@^2.3.0",
@@ -16,8 +16,5 @@
   "engines": {
     "node": "20",
     "npm": ">=8"
-  },
-  "files": [
-    "dist"
-  ]
+  }
 }
