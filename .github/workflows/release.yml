@@ -22,4 +22,4 @@ jobs:
       - name: build
         run: npm run build
       - name: publish
-        run: npn run publish
+        run: npm run publish
