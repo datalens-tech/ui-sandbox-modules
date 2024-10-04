@@ -13,7 +13,7 @@ module.exports = {
     output: {
         globalObject: 'this',
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist/libs'),
+        path: path.resolve(__dirname, 'dist'),
         chunkFormat: 'commonjs',
         library: {
             type: 'global',
