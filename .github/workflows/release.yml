@@ -6,8 +6,8 @@ on:
   pull_request:
 
 jobs:
-  verify_files:
-    name: Verify Files
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,6 +18,8 @@ jobs:
           node-version: 18
           cache: npm
       - name: Install Packages
-        run: npm ci -ddd
+        run: npm ci
       - name: build
         run: npm run build
+      - name: publish
+        run: npn run publish
