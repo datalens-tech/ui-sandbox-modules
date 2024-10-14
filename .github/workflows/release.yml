@@ -27,6 +27,6 @@ jobs:
       - name: build
         run: npm run build
       - name: Publish
-        run: npm publish
+        run: npm version patch && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
