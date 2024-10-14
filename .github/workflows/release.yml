@@ -26,6 +26,8 @@ jobs:
         run: npm ci
       - name: build
         run: npm run build
+      - name: Git user configuration
+        run: git config user.email "" && git config user.name "GitHub Release"
       - name: Publish
         run: npm version patch && npm publish
         env:
