@@ -25,7 +25,7 @@ jobs:
           cache: npm
       - name: Install Packages
         run: npm ci
-      - name: build
+      - name: Build
         run: npm run build
       - name: Git user configuration
         run: git config user.email "datalens-tech+bot@github.com" && git config user.name "Datalens-tech robot"
