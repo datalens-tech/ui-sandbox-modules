@@ -27,7 +27,7 @@ jobs:
       - name: build
         run: npm run build
       - name: Git user configuration
-        run: git config user.email "" && git config user.name "GitHub Release"
+        run: git config user.email "datalens-tech+bot@github.com" && git config user.name "Datalens-tech robot"
       - name: Publish
         run: npm version patch && npm publish
         env:
