@@ -55,3 +55,20 @@ jobs:
           echo "Created new release branch: $NEW_BRANCH"
 
           echo "NEW_BRANCH=$NEW_BRANCH" >> "$GITHUB_ENV"
+          - name: 'Commit package version'
+          run: |
+            git config user.email "" && git config user.name "GitHub Release"
+            git add package.json && git add package-lock.json && git commit -am "Bump version to $NEW_VERSION [release]"
+            git push --set-upstream origin "$NEW_BRANCH"
+      - uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_NEW_VERSION }}
+          release_name: ${{ env.TAG_NEW_VERSION }}
+          commitish: ${{ env.NEW_BRANCH }}
+          body: ${{ env.COMMIT_NAME }}
+          draft: false
+          prerelease: false
+      - name: 'Success notify'
+        run: echo "Version bumped to '$TAG_NEW_VERSION' and pushed to remote repository"
