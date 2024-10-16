@@ -32,7 +32,7 @@ jobs:
           MAIN_COMMIT=$(git rev-parse origin/main)
           echo "Main commit: ${MAIN_COMMIT}"
           LAST_RELEASE_BRANCH="release-${LAST_RELEASE_VERSION}"
-          LAST_RELEASE_COMMIT=$(git rev-parse "origin/$LAST_RELEASE_BRANCH")
+          LAST_RELEASE_COMMIT=$(git rev-parse "origin/main")
           echo "Last release commit: ${LAST_RELEASE_COMMIT}"
 
           if [ "$MAIN_COMMIT" = "$LAST_RELEASE_COMMIT" ]; then echo "Hash commit in main branch matches the last release branch commit" && exit 1; fi
