@@ -47,3 +47,11 @@ jobs:
 
           echo "NEW_VERSION=$NEW_VERSION" >> "$GITHUB_ENV"
           echo "TAG_NEW_VERSION=$TAG_NEW_VERSION" >> "$GITHUB_ENV"
+      - name: 'Create new release branch'
+        run: |
+          NEW_BRANCH="release-$NEW_VERSION"
+
+          git checkout -b "$NEW_BRANCH"
+          echo "Created new release branch: $NEW_BRANCH"
+
+          echo "NEW_BRANCH=$NEW_BRANCH" >> "$GITHUB_ENV"
