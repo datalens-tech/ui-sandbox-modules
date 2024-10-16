@@ -78,6 +78,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish --tag "beta-$TAG_NEW_VERSION"
+        run: npm publish --tag "beta-$TAG_NEW_VERSION" --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
