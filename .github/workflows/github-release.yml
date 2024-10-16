@@ -79,4 +79,4 @@ jobs:
       - name: Publish
         run: npm publish --tag "beta-$TAG_NEW_VERSION"
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
