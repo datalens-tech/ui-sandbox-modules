@@ -16,9 +16,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
+      - name: Git user configuration
+        run: |
+            git config user.email "datalens-tech+bot@github.com"
+            git config user.name "Datalens-tech robot"
       - name: Bump the version
         run: npm version patch -m 'bump version to %s'
       - name: Push changes
-        run: |
-          git config user.email "datalens-tech+bot@github.com"
-          git config user.name "Datalens-tech robot"
+        run: git push origin HEAD --follow-tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
