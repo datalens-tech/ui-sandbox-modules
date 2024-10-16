@@ -77,6 +77,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish --tag "$TAG_NEW_VERSION"
+        run: npm version "$TAG_NEW_VERSION" && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
