@@ -26,6 +26,6 @@ jobs:
       - name: Bump the version
         run: npm version patch -m 'bump version to %s'
       - name: Push changes
-        run: git push origin HEAD --follow-tags
+        run: git push origin/main HEAD --follow-tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
