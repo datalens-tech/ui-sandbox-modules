@@ -1,4 +1,4 @@
-name: Bump path version
+name: Release on Github
 
 on:
   # push:
@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  bump-version:
+  github-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -70,5 +70,13 @@ jobs:
           body: ${{ env.COMMIT_NAME }}
           draft: false
           prerelease: false
-      - name: 'Success notify'
-        run: echo "Version bumped to '$TAG_NEW_VERSION' and pushed to remote repository"
+      # - name: 'Success notify'
+      #   run: echo "Version bumped to '$TAG_NEW_VERSION' and pushed to remote repository"
+      - name: Install Packages
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Publish
+        run: npm publish --tag "$TAG_NEW_VERSION"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
