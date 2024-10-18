@@ -1,4 +1,4 @@
-name: Release on Github
+name: Release and publish
 
 on:
   # push:
@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  github-release:
+  release-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -78,6 +78,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish
+        run: npm publish --tag "beta-$TAG_NEW_VERSION"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
