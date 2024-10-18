@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        'index': './src/index.js',
+        'index': path.resolve(__dirname, 'src/index.js'),
         '@gravity-ui/date-utils/v2.3.0': {
             import: '@gravity-ui/date-utils.2.3.0',
         },
