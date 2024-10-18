@@ -72,8 +72,6 @@ jobs:
           body: ${{ env.COMMIT_NAME }}
           draft: false
           prerelease: false
-      # - name: 'Success notify'
-      #   run: echo "Version bumped to '$TAG_NEW_VERSION' and pushed to remote repository"
       - name: Install Packages
         run: npm ci
       - name: Build
