@@ -75,6 +75,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: Publish
-        run: npm publish --access=public --tag "beta-$TAG_NEW_VERSION"
+        run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
