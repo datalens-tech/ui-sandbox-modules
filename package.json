@@ -15,5 +15,11 @@
     "@gravity-ui/date-utils.2.3.0": "npm:@gravity-ui/date-utils@^2.3.0",
     "@gravity-ui/date-utils.2.5.3": "npm:@gravity-ui/date-utils@^2.5.3",
     "webpack-cli": "^5.1.4"
+  },
+  "engines": {
+    "node": ">= 18",
+    "npm": ">= 9",
+    "yarn": "Please use npm instead of yarn to install dependencies",
+    "pnpm": "Please use npm instead of pnpm to install dependencies"
   }
 }
