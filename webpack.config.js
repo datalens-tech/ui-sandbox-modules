@@ -3,6 +3,7 @@ const path = require('path');
 const entries = ['d3-chord/v3.0.1', 'd3/v7.9.0'];
 
 module.exports = {
+    context: __dirname,
     entry: {
         '@gravity-ui/date-utils/v2.3.0': {
             import: '@gravity-ui/date-utils.2.3.0',
@@ -11,7 +12,7 @@ module.exports = {
             import: '@gravity-ui/date-utils.2.5.3',
         },
         ...entries.reduce((acc, entry) => {
-            acc[entry] = path.resolve(__dirname, `src/entries/${entry.replace('/', '_')}.ts`);
+            acc[entry] = `./src/entries/${entry.replace('/', '_')}.ts`;
             return acc;
         }, {}),
     },
