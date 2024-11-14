@@ -3,7 +3,6 @@ const path = require('path');
 const entries = ['d3-chord/v3.0.1', 'd3/v7.9.0'];
 
 module.exports = {
-    context: __dirname,
     entry: {
         '@gravity-ui/date-utils/v2.3.0': {
             import: '@gravity-ui/date-utils.2.3.0',
