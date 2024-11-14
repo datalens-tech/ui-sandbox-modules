@@ -5,7 +5,8 @@
   "repository": "https://github.com/datalens-tech/ui-sandbox-modules.git",
   "author": "DataLens Team <https://github.com/datalens-tech>",
   "files": [
-    "dist/"
+    "dist/",
+    "src/"
   ],
   "scripts": {
     "build": "rm -rf dist && NODE_OPTIONS=--max_old_space_size=4096 webpack -c webpack.config.js",

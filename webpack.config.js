@@ -12,7 +12,7 @@ module.exports = {
             import: '@gravity-ui/date-utils.2.5.3',
         },
         ...entries.reduce((acc, entry) => {
-            acc[entry] = `./src/entries/${entry.replace('/', '_')}.ts`;
+            acc[entry] = path.resolve(__dirname, `./src/entries/${entry.replace('/', '_')}.ts`);
             return acc;
         }, {}),
     },
