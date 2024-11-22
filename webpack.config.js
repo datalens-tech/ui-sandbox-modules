@@ -1,6 +1,6 @@
 const path = require('path');
 
-const entries = ['d3-chord/v3.0.1', 'd3/v7.9.0'];
+const entries = ['d3-chord/v3.0.1', 'd3/v7.9.0', 'dom-api'];
 
 module.exports = {
     context: __dirname,
