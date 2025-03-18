@@ -11,6 +11,9 @@ module.exports = {
         '@gravity-ui/date-utils/v2.5.3': {
             import: '@gravity-ui/date-utils.2.5.3',
         },
+        'lodash/v4.17.21': {
+            import: 'lodash.4.17.21',
+        },
         ...entries.reduce((acc, entry) => {
             acc[entry] = path.resolve(__dirname, `./src/entries/${entry.replace('/', '_')}.js`);
             return acc;
